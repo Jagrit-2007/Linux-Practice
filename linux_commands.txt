@@ -77,11 +77,11 @@ and so on………..
 45. passwd : 
 46. chown :
 47. chmod :  
-
 48. compgen -b : prints all built-ins
 49. type :
 50. reboot :
 51. shutdown :
+<<<<<<< HEAD
 52. exit : 
 53. top :
 
@@ -101,3 +101,4 @@ The below mentioned commands are the starting commands , one MUST know it !
 10. java -version :
 11.sudo apt install openjdk-21-jdk :
 12. javac -version :
+
