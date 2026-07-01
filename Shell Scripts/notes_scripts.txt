@@ -24,4 +24,37 @@
 
 8. Scripts can work without using the ext. also, but we’ll be using .sh extension
 
+9. when making a shell file we use touch , like : touch helloworld.sh
+
+   the problem is it gives only read and write perms and NO exec perms
+
+   -rw-rw-r-- 1 : so as we can see there’s no exec (x) perms for owner(user) &     
+   group
+
+   so , when we try execute by ./helloworld.sh in the “Shell Script” dir
+
+   it gives , bash: ./helloworld.sh: Permission denied
+              username@machinename:~/Desktop/Linux Practice/Shell Scrip
+
+   so change the perms for it by : chmod u+x helloworld.sh
+
+   so now it’s : -rwxrw-r-- 1
+
+10. In shell script , comments are written by #
+
+11. There are two types of variables : System defined (ALWAYS UPPERCASE) and user        
+
+    defined (usually lowercase but not necessarily).
+
+12. Make sure you’re assigning value like , name=jagrit
+    
+    NOT like this , name = jagrit
+
+13. Variables are case sensitive , Variable should NEVER start from any numeric    
+
+    value , NO special chars or spaces in variable name , use underscore(_) ONLY
+
+14. Take user input by : read [variable]
+
+    Can take multiple inputs by : read [variable1] [variable2] [variable3]
 
