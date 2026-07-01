@@ -1,51 +1,158 @@
 ﻿*****************************Essential Linux Commands*****************************
+***********************************************************************************
 
 I have mentioned few essential Linux commands with there syntax and I have also mentioned few options which could be used , I will be updating it on regular basis.
 
 Before proceeding I would also like to tell you that for copying and paste use ctrl+shift+C and ctrl+shift+V respectively.
 
+***********************************************************************************
 1. whoami : It prints the current username
 
+***********************************************************************************
 2. man : It stands for manual, it displays the manual of the argument passed to it.
 
 Syntax: man [argument]
 
-
+***********************************************************************************
 3. clear : It clears the terminal session and clears scrollback buffer if any.
 
 Options : 
+
 a. -x : prevents from clearing the scrollback buffer, clear -x
 
+***********************************************************************************
 4. pwd : It stands for Print Working Directory, displays full file name of current working directory.
 
-5. ls : list directory content. Ignores files & directories starting from a ‘.’ by defualt.
+***********************************************************************************
+5. ls : list directory content. Ignores files & directories starting from a ‘.’ by 
+
+        defualt.
 
 Options: 
+
 a. -l : display long detailed information 
 b. -S : sort by file size , largest first 
 c. -h : human readable
 d. -a : it makes the hidden files display
 
+***********************************************************************************
 6. cd : Change Directory
 
 a. To move in parent/previous directory use : cd ..
 b. to move in parent’s parent directory use : cd ../..
-and so on………..
+   and so on………..
 
+***********************************************************************************
 7. mkdir : make directory(ies) , it creates directory if they do not exist.
 
-           Can pass multiple directories as arguments , like mkdir dir1 dir2 dir3
+           Can pass multiple directories as arguments , 
+           
+           like, mkdir [dir1] [dir2] [dir3]
 
+**********************************************************************************
+8. touch : to update the access and modify the time of each file of current time
 
-8. touch :
-9. rmdir : 
-10. rm :
-11. open :
-12. mv :
-13. cp :
-14. head :
-15. tall :
-16. date :
+           it can create 1 or multiple files too : touch [file1] [file2] [file3]
+
+***********************************************************************************
+9. rmdir : remove directory(ies) ONLY IF they are empty. Can remove multiple empty 
+  
+           directories by , rmdir [dir1] [dir2] [dir3]
+
+***********************************************************************************
+10. rm : remove files , by default it does not delete directories , NO TRASH
+
+Options: 
+
+a. -r : to remove directory and their content recursively
+b. -i : prompt before every removal , interactive y or n
+c. -d : remove empty directories
+d. -v : verbose , means it explains what is being done
+
+NOTE : when you delete a dir recursively, it first MUST empty the directory before it can remove the directory. 
+
+So , rm -r follows Upward or Post-order Traversal ( Bottom to Up ) 
+
+Step 1 : Dives straight into the deepest level of folder structure .
+Step 2 : Removes the individual files at very bottom.
+Step 3 : Once that bottom directory is empty , it removes that directory.
+Step 4 : Moves one level upward (parent dir) and repeats that process.
+
+***********************************************************************************
+11. open : opens a file or url in user’s preferred application
+
+Example: open ~/Desktop/Folder1 , this will open the Graphical User Interface (GUI)
+
+***********************************************************************************
+12. mv : move & rename files
+
+a. For moving a file : mv [file] [destination-directory]
+
+b. For renaming a file : mv [current-name-file] [new-file-name]
+
+Option:
+
+-v : verbose, it tells whats’s happening 
+
+Even if we move a file it says renamed , we get to know it by -v
+
+jagrit@dell:~/Desktop/Folder2$ mv -v abcd.txt ~/Desktop/Folder1/
+renamed 'abcd.txt' -> '/home/jagrit/Desktop/Folder1/abcd.txt'
+
+***********************************************************************************
+13. cp : copy files and directories
+
+jagrit@dell:~/Desktop/Folder2$ mv -v abcd.txt ~/Desktop/Folder1/
+renamed 'abcd.txt' -> '/home/jagrit/Desktop/Folder1/abcd.txt'Syntax to copy FILE : cp [file-name] [destination-dir]
+
+Syntax to copy DIRECTORY : cp -r [directory-to-copy] [destination-directory]
+
+Here, -r is recursively copies directories and same as -v as verbose , which tells
+
+what is happening.
+
+NOTE: While copying directories by (cp -r) we moves downward , use verbose (-v) to understand it that how files and dirs are being copied & in which manner.
+
+Suppose Desktop have 2 dirs Folder1 & Folder2 
+use :  cp -r Folder1/ ~/Desktop/Folder2/
+
+Now , Folder1 dir is first copied to Folder2 dir , then it goes downward and looks content in Folder1 , it sees oh yes abc.txt so now Folder1/abc.txt file Is copied in Folder2/Folder1 so its now Folder2/Folder1/abc.txt , now same goes for next file in Folder1 and so on , now comes the if Folder1 have more directories it will follow the same approach as I have mentioned…
+
+This is called Downward or Pre-order traversal (Up to down) and cp follows it.
+
+In simple words ,
+Step 1 : it creates the directory in destination directory-to-copy
+Step 2 : it enters that dir and copies files inside it
+Step 3 : it sees subdirectories , creates that subdirectories in directory which is copied , enters it , copies and so on...
+
+***********************************************************************************
+14. head : by default print first 10 lines of file
+
+Options:
+
+a. -n [number] : ignores default 10, and prints desired history from top
+b. -v : verbose
+
+*********************************************************************************** 
+15. tail : by default print last 10 lines of file
+
+Options:
+
+a. -n [number] : ignores default 10, and prints desired history from last
+b. -v : verbose
+
+***********************************************************************************
+16. date : print or set the system date and time 
+
+Default output using date ---- Wed Jul  1 09:20:19 PM IST 2026
+
+Options:
+
+a. -u : print or set Universal Coordinated Time (UTC)
+b. -s , --set <string> : set time described by string
+c. -V , --version : print version
+
+***********************************************************************************
 17. cat :
 18. less :
 19. echo : 
@@ -76,28 +183,53 @@ and so on………..
 44. sudo :
 45. passwd : 
 46. chown :
+
 47. chmod :  
+
 48. compgen -b : prints all built-ins
+
+***********************************************************************************
+
 49. type :
 50. reboot :
 51. shutdown :
-52. exit : 
+
+52. exit : it exits the current terminal, standard C lib , #include<stdlib.h>
+
 53. top :
 
+54. xdg : 
 
+***********************************************************************************
+***********************************************************************************
 
 The below mentioned commands are the starting commands , one MUST know it !
 
-1. sudo apt update :
-2. apt list –upgradable :
-3. sudo apt upgrade :
-4. sudo apt install build-essential :
-5. sudo apt install htop :
-6. sudo snap install –classic code :
-7. git -v :
-8. gcc -v :
-9. sudo apt install default-jdk :
-10. java -version :
-11.sudo apt install openjdk-21-jdk :
-12. javac -version :
+1. sudo apt update 
+
+2. apt list –upgradable
+
+3. sudo apt upgrade 
+
+4. sudo apt install build-essential : installs all the essential things including                 
+
+                                     gcc compiler and git
+
+5. sudo apt install htop : give details of process which utilises CPU mostly
+
+6. sudo snap install –classic code : installs vs code
+
+7. git -v : gives git version
+
+8. gcc -v : gives gcc version
+
+9. sudo apt install default-jdk : installs default java and its essentials
+
+10. java -version : gives java version
+
+11. sudo apt install openjdk-21-jdk : installs openn java development kit by redhat
+
+12. javac -version : gives java’s compiler version
+
+13. run script by : ./scriptname.sh
 
