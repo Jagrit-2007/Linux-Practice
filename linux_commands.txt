@@ -81,7 +81,6 @@ and so on………..
 49. type :
 50. reboot :
 51. shutdown :
-<<<<<<< HEAD
 52. exit : 
 53. top :
 
