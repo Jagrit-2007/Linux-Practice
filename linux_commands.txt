@@ -1,0 +1,103 @@
+﻿*****************************Essential Linux Commands*****************************
+
+I have mentioned few essential Linux commands with there syntax and I have also mentioned few options which could be used , I will be updating it on regular basis.
+
+Before proceeding I would also like to tell you that for copying and paste use ctrl+shift+C and ctrl+shift+V respectively.
+
+1. whoami : It prints the current username
+
+2. man : It stands for manual, it displays the manual of the argument passed to it.
+
+Syntax: man [argument]
+
+
+3. clear : It clears the terminal session and clears scrollback buffer if any.
+
+Options : 
+a. -x : prevents from clearing the scrollback buffer, clear -x
+
+4. pwd : It stands for Print Working Directory, displays full file name of current working directory.
+
+5. ls : list directory content. Ignores files & directories starting from a ‘.’ by defualt.
+
+Options: 
+a. -l : display long detailed information 
+b. -S : sort by file size , largest first 
+c. -h : human readable
+d. -a : it makes the hidden files display
+
+6. cd : Change Directory
+
+a. To move in parent/previous directory use : cd ..
+b. to move in parent’s parent directory use : cd ../..
+and so on………..
+
+7. mkdir : make directory(ies) , it creates directory if they do not exist.
+
+           Can pass multiple directories as arguments , like mkdir dir1 dir2 dir3
+
+
+8. touch :
+9. rmdir : 
+10. rm :
+11. open :
+12. mv :
+13. cp :
+14. head :
+15. tall :
+16. date :
+17. cat :
+18. less :
+19. echo : 
+20. wc :
+21. piping :
+22. sort :
+23. uniq :
+24. diff :
+25. find :
+26. grep :
+27. du :
+28. df :
+29. history :
+30. ps :
+31. top :
+32. kill :
+33. killall: 
+34. jobs , bg , fg : 
+35. gzip :
+36. gunzip :
+37. tar :
+38. nano :
+39. alias : 
+40. xargs :
+41. ln :
+42. who :
+43. su :
+44. sudo :
+45. passwd : 
+46. chown :
+47. chmod :  
+
+48. compgen -b : prints all built-ins
+49. type :
+50. reboot :
+51. shutdown :
+52. exit : 
+53. top :
+
+
+
+The below mentioned commands are the starting commands , one MUST know it !
+
+1. sudo apt update :
+2. apt list –upgradable :
+3. sudo apt upgrade :
+4. sudo apt install build-essential :
+5. sudo apt install htop :
+6. sudo snap install –classic code :
+7. git -v :
+8. gcc -v :
+9. sudo apt install default-jdk :
+10. java -version :
+11.sudo apt install openjdk-21-jdk :
+12. javac -version :

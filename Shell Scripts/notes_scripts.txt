@@ -1,0 +1,27 @@
+﻿******************************* Shell Scripting **********************************
+
+1. bash uses REPL : read eval print loop
+
+2. Shell Scripts are Interpretated by Operating system NOT Complied.
+
+3. To see what shell your system supports , use : cat /etc/shells
+
+4. bash = bourne again shell , sh = shell
+
+5. to find out where our bash is located use : which bash , it will give
+
+   /usr/bin/bash or /bin/bash
+
+6. first line of script will be : #!
+   
+   # is hash and ! Is bang , So its called Shbang or hashbang
+   
+   then comes the location of bash shell , /usr/bin/bash
+
+   it helps interpretator knows that its a bash shell script
+
+7. echo is the command usually used to print something.
+
+8. Scripts can work without using the ext. also, but we’ll be using .sh extension
+
+
