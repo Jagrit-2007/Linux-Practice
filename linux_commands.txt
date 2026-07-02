@@ -33,7 +33,7 @@ Options:
 a. -l : display long detailed information 
 b. -S : sort by file size , largest first 
 c. -h : human readable
-d. -a : it makes the hidden files display
+d. -a : it makes the hidden files display , we generally use -al or -la
 
 ***********************************************************************************
 6. cd : Change Directory
@@ -51,9 +51,9 @@ b. to move in parent’s parent directory use : cd ../..
 
 **********************************************************************************
 8. touch : to update the access and modify the time of each file of current time
-
            it can create 1 or multiple files too : touch [file1] [file2] [file3]
-
+by default perms are : -rw-rw-r-- , you could change it since user doesn’t have x
+(don’t worry it’s covered in point 47. chmod).
 ***********************************************************************************
 9. rmdir : remove directory(ies) ONLY IF they are empty. Can remove multiple empty 
   
@@ -71,7 +71,7 @@ d. -v : verbose , means it explains what is being done
 
 NOTE : when you delete a dir recursively, it first MUST empty the directory before it can remove the directory. 
 
-So , rm -r follows Upward or Post-order Traversal ( Bottom to Up ) 
+So , rm -r follows Upward direction or Post-order Traversal ( Bottom to Up ) 
 
 Step 1 : Dives straight into the deepest level of folder structure .
 Step 2 : Removes the individual files at very bottom.
@@ -153,10 +153,44 @@ b. -s , --set <string> : set time described by string
 c. -V , --version : print version
 
 ***********************************************************************************
-17. cat :
-18. less :
-19. echo : 
-20. wc :
+17. cat : Concatenate 
+
+It have three functions :
+a. read : by using just cat , so write anything it will print it
+b. display file: use , cat [file] , it will display the content of that file
+c. combine file: use , cat [file1] [file2] [file3], It’ll combine all files content
+
+
+
+
+
+Options:
+
+a. -n : will add line number to all lines of file-name
+b. -b : will add line number to NONBLANK lines means the line with content only
+c. -s : if multiple line breaks between 2 lines , it makes it to only 1 line break
+
+***********************************************************************************
+18. less : Displays content of file in terminal in a better way than displaying content by cat.
+
+Syntax: less [file]
+
+***********************************************************************************
+19. echo : Displays a line of text which we type mainly used with piping
+
+It’s mostly use in:
+1. Overwriting (>) or appending (>>) to files
+2. In writing scripts.
+
+Explaining 1st point:
+
+a. echo "Good Evening Everyone" > greetings.txt : It writes the good evening message in greeting.txt file , even if file is not created it will create itself , also if something’s already written in the txt file , it will overwrite it.
+
+b. echo "Add this extra line to the bottom" >> notes.txt : It DOES NOT overwrite, it just that that text at the bottom of file .
+
+***********************************************************************************
+20. wc : wc stands for word count, it gives useful information about a file or input it receives via pipes.
+
 21. piping :
 22. sort :
 23. uniq :
@@ -183,10 +217,42 @@ c. -V , --version : print version
 44. sudo :
 45. passwd : 
 46. chown :
+***********************************************************************************
+47. chmod : change mode , basically for changing file perms we use this.
 
-47. chmod :  
+Permissions follows , read write execute manner (rwx)
 
-48. compgen -b : prints all built-ins
+Perms look like this -rwxr-xr--, or lrwxrw-r-- or drwxrw-r--
+( here first – represents perms of a file , l is for link , and d is for dir perms)
+r = read
+w = write
+x = execute
+- = specific entity may it be user(owner), group, world doesn’t have specific perm.
+
+Method to change file permissions:
+A. u is user(owner) , g is group , o is other(the world) and a is all means u,g,o
+B. - is remove perm , + add perm , = is set a perm and remove other
+
+Syntax = chmod mode file
+
+So what is mode here , it’s how we give permission to someone , its of 3 things
+
+a. who
+b. perm needs to be add(+), remove(-) or to set perm(+)
+c. which perm
+
+So , it can be:
+u+x it means execute perm given to user,
+g+w it means write perm given to group,
+a+x it means execute perm given to all ( user, group, other)
+
+So, chmod u+x hello.txt , this is how permissions can be changed.
+
+***********************************************************************************
+48. compgen : Completion Generator , It is a built-in command in the Bash shell that is primarily used behind the scenes to power Tab-completion
+
+Option:
+-b : prints all bash built-in commands available in system
 
 ***********************************************************************************
 
@@ -218,6 +284,8 @@ The below mentioned commands are the starting commands , one MUST know it !
 5. sudo apt install htop : give details of process which utilises CPU mostly
 
 6. sudo snap install –classic code : installs vs code
+
+to open vs code via terminal , use : code .
 
 7. git -v : gives git version
 
