@@ -215,7 +215,23 @@ b. echo "Add this extra line to the bottom" >> notes.txt : It DOES NOT overwrite
 42. who :
 43. su :
 44. sudo :
-45. passwd : 
+**********************************************************************************
+45. passwd : change user password , it will also reject those pass which wont be complex.
+
+User account file:
+a. /etc/passwd : user account information
+b. /etc/shadow : secure user account information , it is highly restricted and requires sudo to view , it stores actual encrypted pass & it’s rules.
+
+Options:
+
+a. -S : Status , Command: sudo passwd -S , it asks linux to give a quick , one-line report on health and security status of that password.
+b. -a : used with -S , it lists password status for all accounts on entire system
+
+ALL THE BELOW NEED SUDO ACCESS:
+
+c. 
+
+ 
 46. chown :
 ***********************************************************************************
 47. chmod : change mode , basically for changing file perms we use this.
@@ -257,12 +273,17 @@ Option:
 ***********************************************************************************
 
 49. type :
-50. reboot :
-51. shutdown :
+***********************************************************************************
+50. reboot : will reboot , and open the BRUB (Grand Unified Bootloader)
 
+***********************************************************************************
+51. shutdown : shutdown -P 
+
+***********************************************************************************
 52. exit : it exits the current terminal, standard C lib , #include<stdlib.h>
 
-53. top :
+***********************************************************************************
+53. top : displays linux processes and threads, a limited interactive interface
 
 54. xdg : 
 
@@ -300,4 +321,15 @@ to open vs code via terminal , use : code .
 12. javac -version : gives java’s compiler version
 
 13. run script by : ./scriptname.sh
+
+**********************************************************************************************************************************************************************
+
+Installing VirtualBox:
+
+1. sudo apt install virtualbox -y
+2. sudo apt install virtualbox-ext-pack -y
+3. vboxmanage --version
+4. virtualbox & : opens virtualbox
+
+***********************************************************************************
 
