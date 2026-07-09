@@ -1,0 +1,7 @@
+﻿*********************QUESTIONS BASED ON LINUX COMMANDS*********************
+
+Q 1 . You have a filed name users.txt that contains a list of names. Some of those names are duplicates.
+Write a piped command that removes the duplicate names and outputs only the unique names in
+alphabetical order.
+
+Q 2 . 
