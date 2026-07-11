@@ -68,6 +68,7 @@ a. -r : to remove directory and their content recursively
 b. -i : prompt before every removal , interactive y or n
 c. -d : remove empty directories
 d. -v : verbose , means it explains what is being done
+e. -f : force , forces Linux to perma delete files & folders without asking any confirmation and without sending to them recycle bin or trash.
 
 NOTE : when you delete a dir recursively, it first MUST empty the directory before it can remove the directory. 
 
@@ -212,7 +213,10 @@ b. echo "Add this extra line to the bottom" >> notes.txt : It DOES NOT overwrite
 39. alias : 
 40. xargs :
 41. ln :
-42. who :
+***********************************************************************************
+42. w : show who’s logged in and what they are doing
+
+***********************************************************************************
 43. su :
 44. sudo :
 **********************************************************************************
@@ -229,10 +233,15 @@ b. -a : used with -S , it lists password status for all accounts on entire syste
 
 ALL THE BELOW NEED SUDO ACCESS:
 
-c. 
+c. -l: it locks a user password, this prevents user from logging via password
+Locking a password might stop user login by password but ssh key might work .
+d. -u: it UNLOCKS a previously locked account.
+e. -d: this completely deletes user pass , making the account passwordless.
+f. -e: it immediately expires a user password, means the next time user tries to log in via terminal or GUI Desktop, Linux forces to change pass to a brand new one before letting access the system.
 
- 
+***********************************************************************************
 46. chown :
+
 ***********************************************************************************
 47. chmod : change mode , basically for changing file perms we use this.
 
