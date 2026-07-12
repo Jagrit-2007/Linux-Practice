@@ -126,6 +126,12 @@ Step 1 : it creates the directory in destination directory-to-copy
 Step 2 : it enters that dir and copies files inside it
 Step 3 : it sees subdirectories , creates that subdirectories in directory which is copied , enters it , copies and so on...
 
+
+Options: 
+
+a. -v : verbose
+b. -a : copy all files including there perms and ownerships
+c. -r : recursive
 ***********************************************************************************
 14. head : by default print first 10 lines of file
 
@@ -296,7 +302,26 @@ Option:
 
 54. xdg : 
 
+55. file : will give a description about the file you pass as argument
+
+Syntax : file filename
 ***********************************************************************************
+***********************************************************************************
+Try these :
+
+1. /etc/crontab : it describes when automated jobs will run
+
+2. /etc/fstab : a table of storage devices and their associated mount points
+
+3. /etc/shadow 
+
+4. /etc/passwd 
+
+5. /var/log : contains log files and records of various system activities
+
+6. /var/log/syslog 
+
+
 ***********************************************************************************
 
 The below mentioned commands are the starting commands , one MUST know it !
