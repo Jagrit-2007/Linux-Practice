@@ -263,11 +263,10 @@ You can check it by running -E option on cat which gives “$” at end of the l
 Option:
 
 a. -u : it gives only unique vales
-b. -c : counts that how many times the values came, can be used with or without -u
+b. -c : counts that how many times the values came, can be used with or without -u 
 
 ***********************************************************************************
-24. diff :
-
+24. diff : compares file line by line
 
 25. find :
 26. grep :
@@ -372,6 +371,19 @@ Option:
 55. file : will give a description about the file you pass as argument
 
 Syntax : file filename
+
+
+
+
+
+
+
+
+
+
+
+
+
 ***********************************************************************************
 ***********************************************************************************
 Try these :
@@ -388,7 +400,76 @@ Try these :
 
 6. /var/log/syslog 
 
+7. echo ~ : will print home directory , since “tilde (~)” have a special meaning 
 
+8. echo “~” : will print “~”
+
+9. echo $PATH 
+
+10. echo $USER : prints the user
+
+Expansions :
+-----------
+
+1. * : it represents all
+
+Suppose its used as : echo he*.txt , so it means anything after “he” may it be helloooooo / hello123 , like literally anything AND which have an extention of .txt
+So print those
+
+2. ? : matches the characters , it can be as many as you want
+
+like as : abc*.??? , so it prints all content which starts from abc and have extention of 3 characters !
+
+3. {} : whenever shell encounters {} with “,” in it, it makes every possible                      
+       combination 
+
+example: echo index.{html, js} , it gives index.html and index.js
+
+example: echo {1..99} , it expands from 1 to 99 including 1 and 99 WITH spaces
+
+It’s actually very useful in creating many like like hundreds and thousands of files by:
+
+touch Hello{1..365}.txt , it creates 365 different files
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***********************************************************************************
 ***********************************************************************************
 
 The below mentioned commands are the starting commands , one MUST know it !
@@ -433,4 +514,7 @@ Installing VirtualBox by Oracle:
 4. virtualbox & : opens virtualbox
 
 ***********************************************************************************
+***********************************************************************************
+
+echo “Make sure you practice all these essential commands and NOT just read!”
 
