@@ -26,7 +26,7 @@ a. -x : prevents from clearing the scrollback buffer, clear -x
 ***********************************************************************************
 5. ls : list directory content. Ignores files & directories starting from a ‘.’ by 
 
-        defualt.
+        defualt.,also size here are file size of directory not their content !
 
 Options: 
 
@@ -193,15 +193,82 @@ Explaining 1st point:
 
 a. echo "Good Evening Everyone" > greetings.txt : It writes the good evening message in greeting.txt file , even if file is not created it will create itself , also if something’s already written in the txt file , it will overwrite it.
 
+It takes output and putting in a file
+
 b. echo "Add this extra line to the bottom" >> notes.txt : It DOES NOT overwrite, it just that that text at the bottom of file .
 
 ***********************************************************************************
 20. wc : wc stands for word count, it gives useful information about a file or input it receives via pipes.
 
-21. piping :
-22. sort :
-23. uniq :
+Syntax : wc file-name 
+
+It gives output as : (no. of lines , no. of words , no. of bytes , file-name)
+
+Also, no. of bytes = no. of characters because 1 char stores 1 byte
+If, more than 1 files are passed as argument, if also outputs the total no. of lines, no. of words and bytes.
+
+Options: 
+
+a. -l : gives no. of lines
+b. -w : gives no. of words
+c. -c : give no. of chars , it also represents no. of bytes the file used
+
+***********************************************************************************
+
+
+21. piping : taking output of a command and passing it as argument/input of other
+
+Example : ls -la | wc , so what It does is , take output of ls -la which will be bunch of dir’s and files and then its passed as argument for “wc” which will gives no. lines so that means this much of files and dir’s exist in that current dir .
+
+Example : cat file1 file2 | wc , so here we passed the content of file1 & file 2
+
+We can also take the output of wc and overwrite it in a file by “>”
+
+like as : cat file1 file2 | wc > file3 , so it saves output of wc in file3
+
+***********************************************************************************
+22. sort : so , it sorts the file , it DOESNOT change the file but it just sorts
+
+It is case sensitive so Uppercases before lowercase if the letters are same
+
+If we have a line breaker it always come first in sorting
+
+Options:
+
+a. -n : it does numeric sorting , it’s in Ascending order
+b. -r : it reveres the order , so in case of “-n” it’ll make it in descending order
+c. -u : if a file contains duplicate vales but we need it uniquely use “-u”
+
+Examples: sort -nu random_nums.txt > sorted_uniq_nums.txt
+
+***********************************************************************************
+23. uniq : sort lines of text , it only looks at the adjacent lines and prints the 
+           unique value once 
+
+BUT the problem with it , the file might contain duplicate value if they are not adjacent , so for that 
+
+we do : sort file-name | uniq 
+So what it does is it sort the file and then prints only unique text
+
+BUT ALSO , we could do : sort -u file-name
+
+The difference between -u and uniq is actually too impressive , the reason is:
+
+a. uniq : uses strict byte by byte comparison , if “hello” and “hello  ” are present adjacent even , for it both are UNIQUE value, they are considered different
+
+b. sort -u : but in this case it sees the value only , “hello” and “hello “ are duplicates
+
+You can check it by running -E option on cat which gives “$” at end of the line
+
+Option:
+
+a. -u : it gives only unique vales
+b. -c : counts that how many times the values came, can be used with or without -u
+
+***********************************************************************************
 24. diff :
+
+
 25. find :
 26. grep :
 27. du :
@@ -358,7 +425,7 @@ to open vs code via terminal , use : code .
 
 **********************************************************************************************************************************************************************
 
-Installing VirtualBox:
+Installing VirtualBox by Oracle: 
 
 1. sudo apt install virtualbox -y
 2. sudo apt install virtualbox-ext-pack -y
