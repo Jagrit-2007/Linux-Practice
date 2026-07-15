@@ -4,4 +4,19 @@ Q 1 . You have a filed name users.txt that contains a list of names. Some of tho
 Write a piped command that removes the duplicate names and outputs only the unique names in
 alphabetical order.
 
-Q 2 . 
+Q 2 . Print how many total no. of files and directories exist in your home directory. Also find of no. of hidden files or directory.
+
+Ans 2. First command , ls -l | wc 
+       Second command , ls -la | wc
+
+So , here basically we are piping the output of ls -l which is in long format so that’s no. of files & dir’s , and by ls -la  , it gives hidden files too so just subtract them to get no. of hidden files..
+
+
+Q 3. A file contains random numbers , do something in order that there’s no duplicate in file and it’s in descending order and save it in a file.
+
+Ans 3. sort -nu random_nums.txt > unique_rev_nums.txt
+
+Q 4. A hacker have a bunch of files which have many passwords in numeric form, many passwords are repeated, he needs to do something that all passwords can be saved in a file and there is no duplicate of it in an ascending order, help him.
+
+Ans 4. cat pass_num1.txt pass_num2.txt pass_num3.txt | sort -nu > requiredfile.txt
+
