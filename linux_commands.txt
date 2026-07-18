@@ -266,9 +266,30 @@ a. -u : it gives only unique vales
 b. -c : counts that how many times the values came, can be used with or without -u 
 
 ***********************************************************************************
-24. diff : compares file line by line
+24. diff : compares file line by line and outputs there different file-name
 
-25. find :
+Syntax : Diff file1 file2 , so for understanding result will be file1 - file2
+
+***********************************************************************************
+25. find : used to search files in a directory hierarcy ,
+
+We can find a file by it’s name, modification time, file size , file type and many more
+So, to find a file we need to give a location , like as look in this directory and then we give the criteria for searching
+
+Method 1: find directory -name ‘src’
+
+So, it could be like: find . -name ‘*.js’
+basically it’s now finding in current directory “.” then we passed the criteria of name and then the filename (we also used expansion).
+
+Method 2: find directory -type d -name ‘src’
+
+So, here its we are searching directories and followed by name, we could also use:
+a. f : to find only files
+
+
+
+
+
 26. grep :
 27. du :
 28. df :
@@ -281,7 +302,12 @@ b. -c : counts that how many times the values came, can be used with or without 
 35. gzip :
 36. gunzip :
 37. tar :
-38. nano :
+***********************************************************************************
+38. nano : nano is a text editor , it automatically create file if it doesn’t exist
+
+Syntax: nano filename
+
+***********************************************************************************
 39. alias : 
 40. xargs :
 41. ln :
